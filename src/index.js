@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import ReduxToastr from 'react-redux-toastr';
 import configureStore from './store';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'open-iconic/font/css/open-iconic-bootstrap.css';
 
 const store = configureStore()
 

@@ -1,0 +1,18 @@
+.pgFrame {
+  display: flex;
+  justify-content: center;
+  .number {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    &.selected {
+      border: 1px solid #000;
+    }
+  }
+  .leftArrow,.rightArrow{
+      cursor: pointer;
+  }
+}

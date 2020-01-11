@@ -1,0 +1,92 @@
+.linkFrame {
+  padding: 7px 5px;
+  display: flex;
+  position: relative;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    .deleteIcon {
+      visibility: visible;
+    }
+  }
+  .pointContainer {
+    display: inline-block;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    border: 1px solid #979797;
+    background-color: #ececec;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: center;
+    .point {
+      display: block;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 1;
+    }
+    .pointText {
+      font-size: 14px;
+    }
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 100px);
+    height: 100px;
+    vertical-align: middle;
+    padding-left: 15px;
+    .description {
+      display: flex;
+      flex-direction: column;
+      .title {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .subTitle {
+        display: block;
+        font-size: 14px;
+        color: #979797;
+      }
+    }
+    .voteDetail {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: #979797;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  .deleteIcon {
+    visibility: hidden;
+    background-color: red;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+}
