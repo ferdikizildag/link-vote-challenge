@@ -4,11 +4,11 @@ import style from './style.module.scss';
 import Layout from 'components/Layout';
 import SubmitLinkButtton from 'components/SubmitLinkButtton';
 import LinkList from 'components/LinkList';
-import { deleteLink } from 'redux/action/link';
+import { deleteLink, updateVote } from 'redux/action/link';
 
 class Home extends Component {
     render() {
-        const { history: { push }, links, deleteLink } = this.props;
+        const { history: { push }, links, deleteLink, updateVote } = this.props;
 
         return (
             <Layout>
@@ -18,7 +18,7 @@ class Home extends Component {
                     onClick={() => push('new-link')}
                 />
                 <div className={style.line} />
-                <LinkList data={links} deleteLink={deleteLink} />
+                <LinkList data={links} deleteLink={deleteLink} updateVote={updateVote} />
             </Layout>
         )
     }
@@ -26,7 +26,8 @@ class Home extends Component {
 
 
 const mapDispatchToProps = {
-    deleteLink
+    deleteLink,
+    updateVote
 };
 
 const mapStateToProps = (store) => {

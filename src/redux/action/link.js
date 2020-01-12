@@ -20,3 +20,11 @@ export const deleteLink = (data) => {
         value: data
     }
 };
+
+export const updateVote = (role, data) => {
+    return {
+        type: types.UPDATE_VOTE,
+        role: role,
+        value: data
+    }
+};

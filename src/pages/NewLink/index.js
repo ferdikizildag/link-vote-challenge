@@ -12,7 +12,7 @@ class NewLink extends Component {
 
     formSubmit = (values) => {
         const { addLink } = this.props;
-        const link = { ...values, point: 0, id: uuid(), createdAt: new Date() }
+        const link = { ...values, point: 0, id: uuid(), createdAt: new Date(), updatedAt: new Date() }
         addLink(link);
         toastr.success('', link.name + ' Added');
     }

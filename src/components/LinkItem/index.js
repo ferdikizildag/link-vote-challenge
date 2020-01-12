@@ -1,10 +1,15 @@
 import React from 'react';
 import style from './style.module.scss';
+import { VoteTypeEnum } from 'utils/enum';
 
-const LinkItem = ({ item, removeClick }) => {
+const LinkItem = ({ item, removeClick, updateVote }) => {
 
-    const deleteIconClick = (item) => () => {
+    const deleteIconClick = () => {
         removeClick(true, item);
+    }
+
+    const voteClick = (type) => () => {
+        updateVote(type, item);
     }
 
     return (
@@ -19,17 +24,17 @@ const LinkItem = ({ item, removeClick }) => {
                     <span className={style.subTitle}>{item.link}</span>
                 </div>
                 <div className={style.voteDetail}>
-                    <span className={style.upVote}>
+                    <span className={style.upVote} onClick={voteClick(VoteTypeEnum.UP)}>
                         <span className="oi oi-arrow-top" />
                         <span>Up Vote</span>
                     </span>
-                    <span className={style.downVote}>
+                    <span className={style.downVote} onClick={voteClick(VoteTypeEnum.DOWN)}>
                         <span className="oi oi-arrow-bottom" />
                         <span>Down Vote</span>
                     </span>
                 </div>
             </div>
-            <div className={style.deleteIcon} onClick={deleteIconClick(item)}>
+            <div className={style.deleteIcon} onClick={deleteIconClick}>
                 <span className="oi oi-minus" />
             </div>
         </div>
