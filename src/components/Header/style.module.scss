@@ -1,19 +1,21 @@
+@import 'utils/variables.scss';
+
 .hbHeader {
   &:global(.container) {
     padding-left: 0;
     padding-right: 0;
     padding-top: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
     vertical-align: middle;
   }
   .darkLogo {
-    color: #a0a0a0;
+    color: $lightGray;
     font-size: 25px;
     font-weight: bold;
   }
   .lightLogo {
-    color: #606060;
+    color: $darkGray;
     font-size: 25px;
     font-weight: bold;
   }

@@ -1,25 +1,32 @@
 import React from 'react';
-import { Modal } from 'react-bootstrap';
-import './style.scss';
+import { Modal, Col, Row, Container } from 'react-bootstrap';
+import Button from 'components/Button';
+import style from './style.module.scss';
 
-const CustomModal = ({ visibility, onClickCancel, onClickOk, data }) => {
+const CustomModal = ({ visibility, onClickCancel, onClickOk, data, header, question }) => {
     return (
         <Modal show={visibility} onHide={onClickCancel} className="confirmationModalHolder">
-            <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
-            </Modal.Header>
+            <div className={style.header}>
+                <span>{header}</span>
+                <span className={style.closeBtn} onClick={onClickCancel}>
+                    <span className="oi oi-x"></span>
+                </span>
+            </div>
+            <div className={style.content}>
+                <div className={style.question}>{question}</div>
+                <div className={style.linkName}>{data.name}</div>
+                <Container>
+                    <Row>
+                        <Col md={{ span: 4, offset: 2 }}>
+                            <Button title="OK" onClick={onClickOk} />
 
-            <Modal.Body>
-                <div className="modalContent">
-                    <div className="question">Do you want to remove:</div>
-                    <div className="linkName">{data.name}</div>
-                </div>
-            </Modal.Body>
-
-            <Modal.Footer>
-                <span onClick={onClickOk}>OK</span>
-                <span onClick={onClickCancel}>CANCEL</span>
-            </Modal.Footer>
+                        </Col>
+                        <Col md={{ span: 4 }}>
+                            <Button title="CANCEL" onClick={onClickCancel} />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </Modal>
     )
 }

@@ -1,7 +1,9 @@
+@import 'utils/variables.scss';
+
 .frame {
-  background-color: #f7f7f7;
+  background-color: $middleGray;
   border-radius: 5px;
-  border: 1px solid #eee;
+  border: 1px solid $lightGray;
   padding: 7px 5px;
   cursor: pointer;
   display: flex;
@@ -9,8 +11,8 @@
     width: 100px;
     height: 100px;
     font-size: 60px;
-    background-color: red;
-    border: 1px solid #979797;
+    background-color: $red;
+    border: 1px solid $darkGray2;
     background-color: #ececec;
     border-radius: 5px;
     font-weight: bold;

@@ -1,0 +1,23 @@
+@import 'utils/variables.scss';
+
+.header{
+    background-color: $black;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    .closeBtn{
+        cursor: pointer;
+    }
+}
+.content{
+    padding: 30px 50px;
+    text-align: center;
+    .question{
+        color: $darkGray;
+        display: block;
+    }
+    .linkName {
+        font-size: 40px;
+    }
+}

@@ -1,3 +1,5 @@
+@import 'utils/variables.scss';
+
 .pgFrame {
   display: flex;
   justify-content: center;
@@ -9,7 +11,7 @@
     font-weight: bold;
     cursor: pointer;
     &.selected {
-      border: 1px solid #000;
+      border: 1px solid $black;
     }
   }
   .leftArrow,.rightArrow{
