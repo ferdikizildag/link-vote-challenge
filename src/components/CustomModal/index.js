@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import './style.scss';
 
-const CustomModal = ({ visibility, onClickCancel, onClickOk }) => {
+const CustomModal = ({ visibility, onClickCancel, onClickOk, data }) => {
     return (
         <Modal show={visibility} onHide={onClickCancel} className="confirmationModalHolder">
             <Modal.Header closeButton>
@@ -12,7 +12,7 @@ const CustomModal = ({ visibility, onClickCancel, onClickOk }) => {
             <Modal.Body>
                 <div className="modalContent">
                     <div className="question">Do you want to remove:</div>
-                    <div className="linkName">asdsd</div>
+                    <div className="linkName">{data.name}</div>
                 </div>
             </Modal.Body>
 

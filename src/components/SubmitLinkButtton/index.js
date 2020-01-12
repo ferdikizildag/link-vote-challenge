@@ -1,11 +1,11 @@
 import React from 'react';
-import './style.scss';
+import style from './style.module.scss';
 
 const SubmitLinkButton = ({ title, onClick, className }) => {
     return (
-        <div className={`frame ${className}`} onClick={onClick}>
-            <div className='icon'>+</div>
-            <div className='title'>{title}</div>
+        <div className={`${style.frame} ${className}`} onClick={onClick}>
+            <div className={style.icon}>+</div>
+            <div className={style.title}>{title}</div>
         </div>
     )
 }

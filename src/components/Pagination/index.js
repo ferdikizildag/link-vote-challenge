@@ -1,15 +1,15 @@
 import React from 'react';
-import './style.scss';
+import style from './style.module.scss';
 
 const Pagination = () => {
     return (
-        <div className="pgFrame">
-            <div className="leftArrow" onClick={()=>console.log('prev')}>{`<`}</div>
-            <div className="number">1</div>
-            <div className="number">1</div>
-            <div className="number selected">1</div>
-            <div className="number">1</div>
-            <div className="rightArrow" onClick={()=>console.log('next')}>{`>`}</div>
+        <div className={style.pgFrame}>
+            <div className={style.leftArrow} onClick={()=>console.log('prev')}>{`<`}</div>
+            <div className={style.number}>1</div>
+            <div className={style.number}>1</div>
+            <div className={`${style.number} ${style.selected}`}>1</div>
+            <div className={style.number}>1</div>
+            <div className={style.rightArrow} onClick={()=>console.log('next')}>{`>`}</div>
         </div>
     )
 }

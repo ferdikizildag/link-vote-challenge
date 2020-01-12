@@ -1,0 +1,32 @@
+.hbHeader {
+  &:global(.container) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    vertical-align: middle;
+  }
+  .darkLogo {
+    color: #a0a0a0;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .lightLogo {
+    color: #606060;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .darkItem{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .thinItem{
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .normalItem{
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
