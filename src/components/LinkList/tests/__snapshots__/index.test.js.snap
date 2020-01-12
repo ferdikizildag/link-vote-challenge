@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkList renders without crashing 1`] = `
+<div>
+  <select
+    className="orderSelect"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Order by
+    </option>
+    <option
+      value="MOST_VOTED"
+    >
+      Most Voted (Z-&gt;A)
+    </option>
+    <option
+      value="LESS_VOTED"
+    >
+      Less Voted (A-&gt;Z)
+    </option>
+  </select>
+  
+  <CustomModal
+    data={Object {}}
+    header="Remove Link"
+    onClickCancel={[Function]}
+    onClickOk={[Function]}
+    question="Do you want to remove:"
+    visibility={false}
+  />
+</div>
+`;
