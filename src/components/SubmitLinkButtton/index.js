@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import style from './style.module.scss';
 
 const SubmitLinkButton = ({ title, onClick, className }) => {
@@ -9,5 +10,15 @@ const SubmitLinkButton = ({ title, onClick, className }) => {
         </div>
     )
 }
+
+SubmitLinkButton.defaultProps = {
+    title: 'No Text'
+};
+
+SubmitLinkButton.propTypes = {
+    title: PropTypes.string,
+    onClick: PropTypes.func,
+    className: PropTypes.string
+};
 
 export default SubmitLinkButton;

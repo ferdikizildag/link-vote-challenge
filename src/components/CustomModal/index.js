@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { Modal, Col, Row, Container } from 'react-bootstrap';
 import Button from 'components/Button';
 import style from './style.module.scss';
@@ -30,5 +31,21 @@ const CustomModal = ({ visibility, onClickCancel, onClickOk, data, header, quest
         </Modal>
     )
 }
+
+CustomModal.defaultProps = {
+    header: 'No Text',
+    question: 'No Text',
+    visibility: false,
+    data: {}
+};
+
+CustomModal.propTypes = {
+    header: PropTypes.string,
+    question: PropTypes.string,
+    onClickOk: PropTypes.func,
+    onClickCancel: PropTypes.func,
+    visibility: PropTypes.bool,
+    data: PropTypes.object
+};
 
 export default CustomModal;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PropTypes } from 'prop-types';
 import style from './style.module.scss';
 import { VoteOrderEnum } from 'utils/enum';
 import LinkItem from 'components/LinkItem';
@@ -81,7 +82,7 @@ const LinkList = ({ data, deleteLink, updateVote }) => {
                 pageData = data.slice(pageSize * (activePage - 1), pageSize * activePage);
                 setActivePage(activePage - 1);
             }
-            return pageData.map((link,key) => (
+            return pageData.map((link, key) => (
                 <LinkItem
                     key={key}
                     item={link}
@@ -116,5 +117,16 @@ const LinkList = ({ data, deleteLink, updateVote }) => {
         </div>
     )
 }
+
+
+LinkList.defaultProps = {
+    data: []
+};
+
+LinkList.propTypes = {
+    data: PropTypes.array,
+    deleteLink: PropTypes.func,
+    updateVote: PropTypes.func
+};
 
 export default LinkList;

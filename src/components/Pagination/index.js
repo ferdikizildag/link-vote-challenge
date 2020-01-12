@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import style from './style.module.scss';
 
 const Pagination = ({ totalSize, currentPage, setActivePage }) => {
@@ -37,5 +38,11 @@ const Pagination = ({ totalSize, currentPage, setActivePage }) => {
         </div>
     )
 }
+
+Pagination.propTypes = {
+    totalSize: PropTypes.number,
+    currentPage: PropTypes.number,
+    setActivePage: PropTypes.func
+};
 
 export default Pagination

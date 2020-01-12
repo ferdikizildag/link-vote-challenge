@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import style from './style.module.scss';
 import { VoteTypeEnum } from 'utils/enum';
 
@@ -40,5 +41,15 @@ const LinkItem = ({ item, removeClick, updateVote }) => {
         </div>
     )
 }
+
+LinkItem.defaultProps = {
+    item: {}
+};
+
+LinkItem.propTypes = {
+    item: PropTypes.object,
+    removeClick: PropTypes.func.isRequired,
+    updateVote: PropTypes.func.isRequired
+};
 
 export default LinkItem;
