@@ -3,6 +3,22 @@ import { PropTypes } from 'prop-types';
 import { Field } from 'redux-form';
 import style from './style.module.scss';
 
+const renderField = ({
+    input,
+    label,
+    type,
+    className,
+    meta: { touched, error, warning }
+  }) => (
+    <div>
+      <label>{label}</label>
+      <div>
+        <input {...input} placeholder={label} type={type} className={className} />
+        {error && <span className={style.error}>{error}</span>}
+      </div>
+    </div>
+  )
+
 const Input = ({ name, label, placeholder ,validate}) => {
     return (
         <div className={style.frame}>
@@ -11,7 +27,7 @@ const Input = ({ name, label, placeholder ,validate}) => {
                 <Field
                     className={style.input}
                     name={name}
-                    component="input"
+                    component={renderField}
                     type="text"
                     placeholder={placeholder}
                     validate={validate}

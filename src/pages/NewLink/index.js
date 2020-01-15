@@ -11,9 +11,13 @@ import uuid from 'uuid';
 class NewLink extends Component {
 
     formSubmit = (values) => {
-        const { addLink } = this.props;
+        const { addLink,history: { push }, links } = this.props;
         const link = { ...values, point: 0, id: uuid(), createdAt: new Date(), updatedAt: new Date() }
+        console.log(links)
+        const isExist=links.find((item)=>item.name === values.name);
+        console.log(isExist)
         addLink(link);
+        push('/');
         toastr.success('', link.name + ' Added');
     }
 
@@ -34,7 +38,7 @@ class NewLink extends Component {
 
 const mapStateToProps = (store) => {
     return {
-
+        links: store.linkReducer.links
     };
 }
 

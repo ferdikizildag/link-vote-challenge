@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import style from './style.module.scss';
 import { VoteTypeEnum } from 'utils/enum';
+import moment from 'moment';
 
 const LinkItem = ({ item, removeClick, updateVote }) => {
 
@@ -12,7 +13,6 @@ const LinkItem = ({ item, removeClick, updateVote }) => {
     const voteClick = (type) => () => {
         updateVote(type, item);
     }
-
     return (
         <div className={style.linkFrame}>
             <div className={style.pointContainer}>
@@ -23,16 +23,21 @@ const LinkItem = ({ item, removeClick, updateVote }) => {
                 <div className={style.description}>
                     <span className={style.title}>{item.name}</span>
                     <span className={style.subTitle}>{item.link}</span>
+                    <span className={style.subTitle}>{moment(item.createdAt, "YYYYMMDD").fromNow()}</span>
                 </div>
                 <div className={style.voteDetail}>
                     <span className={style.upVote} onClick={voteClick(VoteTypeEnum.UP)}>
                         <span className="oi oi-arrow-top" />
                         <span>Up Vote</span>
                     </span>
-                    <span className={style.downVote} onClick={voteClick(VoteTypeEnum.DOWN)}>
-                        <span className="oi oi-arrow-bottom" />
-                        <span>Down Vote</span>
-                    </span>
+                    {
+                        item.point !== 0 && (
+                            <span className={style.downVote} onClick={voteClick(VoteTypeEnum.DOWN)}>
+                                <span className="oi oi-arrow-bottom" />
+                                <span>Down Vote</span>
+                            </span>
+                        )
+                    }
                 </div>
             </div>
             <div className={style.deleteIcon} onClick={deleteIconClick}>
